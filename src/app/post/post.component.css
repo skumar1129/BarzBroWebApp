@@ -1,0 +1,40 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.card-header {
+    border-width: thin;
+   
+}
+
+.card-body {
+    border-width: thin;
+    
+}
+
+#bar {
+    font-family: Century Gothic, sans-serif;
+}
+
+#content {
+    font-family: Bush Script, sans-serif;
+    font-size: large;
+}
+
+.card-footer {
+    font-family: Gill Sans, sans-serif;
+    border-width: thin;
+   
+    font-size: medium;
+}
+
+#location {
+    font-style: italic;
+}
+
+#post {
+    border-width: thin;
+    border-color: black; 
+}

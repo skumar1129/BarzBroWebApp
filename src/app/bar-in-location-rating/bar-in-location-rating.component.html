@@ -1,0 +1,72 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="inner-wrap">
+      <div *ngIf="isLoading">
+          <div class="spinner-container">
+              <spinner loadingText="Loading...Please wait."></spinner>
+          </div>
+      </div>
+      <div class="jumbotron" *ngIf="noPostsFound">
+       <h1 class="display-4">There are no posts for {{bar | barName}} in {{location}}</h1>
+       <br/>
+       <h3 class="display-6">Make sure your spelling is correct</h3>
+       <br/>
+       <img src="../../assets/img/city_user_bar.jpg" class="img-fluid">
+      </div>
+      <div *ngIf="!noPostsFound">
+
+        <div class="container-fluid">
+          <h2 class="title mt-2 mb-3 font-weight-bold">Posts in {{location}} for {{bar | barName}}</h2>
+          <div class="input-group mt-2 mb-2">
+            <select type="text" class="form-control" placeholder="Bars" [formControl]="newBar">
+              <option></option>
+              <option *ngFor = "let bar of (barsInLoc | uniqueBarName)">{{bar | barName}}</option>
+            </select>
+            <div class="input-group-append">
+              <button class="btn btn-primary mr-3" (click)="searchBar()">Search Bar</button>
+            </div>
+            <input type="text" class="form-control" placeholder="Users" [formControl]="newUser">
+            <div class="input-group-append">
+              <button class="btn btn-primary" (click)="searchUser()">Search User</button>
+            </div>
+          </div>
+          <div class="input-group mt-3 mb-3">
+            <div class="input-group-prepend">
+              <label class="input-group-text">Filter By: </label>
+            </div>
+            <select class="form-control mr-3" id="filter" (change)="selectFilter()">
+              <option>Time</option>
+              <option disabled selected>Rating</option>
+            </select>
+            <select type="text" class="form-control" placeholder="Neighborhood" [formControl]="nbhood">
+              <option></option>
+              <option *ngFor = "let bar of (barsInNbhood | uniqueNbhoodName)">{{bar | barName}}</option>
+            </select>
+            <div class="input-group-append">
+              <button class="btn btn-primary mr-3" (click)="searchNbhood()">Search Area</button>
+            </div>
+            
+          </div>
+        </div>
+
+        <div class="list-group-container" 
+          infinite-scroll
+          [infiniteScrollDistance]="2"
+          [infiniteScrollThrottle]="350"
+          (scrolled)="onScrollDown()">
+            <ul class="list-group">
+                <li class="list-group-item" *ngFor="let post of locBarPosts">
+                  <app-post [post]='post'></app-post>
+                </li>
+            </ul>
+       
+
+            <div class="list-loading" *ngIf="isListLoading">
+                <div class="spinner-container">
+                    <spinner></spinner>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>

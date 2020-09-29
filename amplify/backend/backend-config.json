@@ -1,0 +1,9 @@
+{
+	"auth": {
+		"barappangular9f695f0ba": {
+			"service": "Cognito",
+			"providerPlugin": "awscloudformation",
+			"dependsOn": []
+		}
+	}
+}

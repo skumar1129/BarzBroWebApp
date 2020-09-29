@@ -1,0 +1,19 @@
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+#bar {
+    font-family: Century Gothic, sans-serif;
+}
+
+#content {
+    font-family: Bush Script, sans-serif;
+    font-size: large;
+}
+
+
+.card-footer {
+    font-family: Gill Sans, sans-serif;
+    font-size: medium;
+}

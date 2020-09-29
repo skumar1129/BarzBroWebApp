@@ -1,0 +1,47 @@
+<div class="container">
+    <h1 class="mb-2">Edit Your Post</h1>
+    <form>
+      <div class="form-group mt-2">
+        <h3 for="location">{{post.School}}</h3>
+      </div>
+  
+      <div class="form-group">
+        <label for="bar">Bar</label>
+        <input class="form-control" [formControl]="bar" placeholder="{{post.Bar | barName}}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="bar">Area of Campus</label>
+        <input type="text" class="form-control" [formControl]="neighborhood" placeholder="{{post.Region | barName}}" required>
+      </div>
+
+      <div class="form-group">
+        <label for="rating">Rating</label>
+        <select class="form-control" id="rating" [formControl]="rating" required>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+          <option>6</option>
+          <option>7</option>
+          <option>8</option>
+          <option>9</option>
+          <option>10</option>
+        </select>
+      </div>
+  
+      <div class="form-group">
+        <label for="content">What's Good?</label>
+        <textarea class="form-control" placeholder="{{post.Content}}" [formControl]="content" rows="3" required></textarea>
+      </div>
+
+      <div class="row">
+       
+        <button type="signup" class="btn btn-primary" (click)="deleteEvent()">Delete</button>
+        <button type="submit" class="btn btn-primary" (click)="updateEvent()">Update</button>
+      </div>
+       
+  
+    </form>
+  </div>

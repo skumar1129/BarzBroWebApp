@@ -1,0 +1,54 @@
+<div class="container" *ngIf="!forget">
+    <h1 id="welcome">Welcome to the Barz BRO!</h1>
+    <h5 id="message">Sign in or sign up and start posting!</h5>
+    <button type="submit" class="btn btn-primary mt-3 mb-3" (click)="signUp()">Go to Sign Up Page</button>
+    <form id="signup" ng-submit="submit()">
+      <div class="form-group">
+        <label for="name">Username</label>
+        <input type="text" class="form-control" [formControl]="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" class="form-control" [formControl]="password" required>
+      </div>
+
+      <div class="form-check mb-3">
+        <input type="checkbox" class="form-check-input" [formControl]="remember">
+        <label class="form-check-label" for="remember">Remember me</label>
+      </div>
+        <button type="forget" class="btn btn-primary" (click)="clickForget()">Forgot Password</button>
+        <button type="submit" class="btn btn-primary ml-5" (click)="submit()">Sign In</button>    
+    </form>
+    <br />
+    <img class="img-fluid" src="../../assets/img/sign_in.jpg">
+</div>
+<div class="container" *ngIf="forget">
+  <h5 id="welcome">Fill out the information to reset your password</h5>
+  <form id="signup">
+    <div class="form-group">
+      <label for="name">Username</label>
+      <input type="text" class="form-control" [formControl]="name" required>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="goBack()">Go back</button>
+    <button type="submit" class="btn btn-primary ml-5" (click)="sendCode()">Submit</button>
+  </form>
+  <div class="mt-3" *ngIf="sent">
+    <h5 id="welcome">Fill in the code and new password or hit submit above to resend the code</h5>
+    <form id="signup">
+      <div class="form-group">
+        <label for="code">Verification code</label>
+        <input type="text" class="form-control" [formControl]="code" required>
+      </div>
+      <div class="form-group">
+        <label for="newpassword">New password</label>
+        <input type="password" class="form-control" [formControl]="newPassword" required>
+      </div>
+      <div class="form-group">
+        <label for="confirmassword">Confirm password</label>
+        <input type="password" class="form-control" [formControl]="confirm" required>
+      </div>
+      <button type="submit" class="btn btn-primary" (click)="submitNewPassword()">Submit</button>
+    </form>
+  </div>
+</div>

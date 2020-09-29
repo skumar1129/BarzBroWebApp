@@ -1,0 +1,62 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="inner-wrap">
+      <div *ngIf="isLoading">
+          <div class="spinner-container">
+              <spinner loadingText="Loading...Please wait."></spinner>
+          </div>
+      </div>
+      <div class="jumbotron" *ngIf="noPostsFound">
+        <div class="container">
+          <h1 id="title" class="display-4">Here is a place to see all the posts you make in Cities!</h1>
+          <div class="input-group mt-4 mb-4">
+            <a class="btn btn-primary text-light mr-3" role="button" (click)="createPost()">Create your first post</a>
+            <div class="input-group-prepend">
+              <label class="input-group-text">Posts By: </label>
+            </div>
+            <select class="form-control" id="filter" (change)="selectedFilter()">
+              <option disabled selected>City</option>
+              <option>College</option>
+            </select>
+          </div>
+        </div>
+       
+        <div class="container">
+           <img src="../../assets/img/my_post_page.jpg" class="img-fluid">
+        </div>
+      </div>
+
+      <div *ngIf="showPosts">
+        <div class="input-group mt-4 mb-2">
+          <a class="btn btn-primary text-light mr-5" role="button" (click)="createPost()">Create new post</a>
+          <div class="input-group-prepend">
+            <label class="input-group-text">Posts By: </label>
+          </div>
+          <select class="form-control" id="filter" (change)="selectedFilter()">
+            <option disabled selected>City</option>
+            <option>College</option>
+          </select>
+        </div>
+        <div class="list-group-container"
+          infinite-scroll
+          [infiniteScrollDistance]="2"
+          [infiniteScrollThrottle]="350"
+          (scrolled) ="onScrollDown()" 
+          >
+          <ul class="list-group">
+              <li class="list-group-item mt-2 mb-2" *ngFor="let post of userPosts">
+                  <app-post-card [post]='post'></app-post-card>
+              </li>
+          </ul>
+       
+          <div class="list-loading" *ngIf="isListLoading">
+            <div class="spinner-container">
+                <spinner></spinner>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+

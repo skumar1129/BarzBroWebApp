@@ -1,0 +1,14 @@
+#title {
+    font-family: Century Gothic, sans-serif;
+    font-weight: bold;
+}
+
+#start {
+    font-family: Bush Script, sans-serif;
+    font-weight: bold;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}

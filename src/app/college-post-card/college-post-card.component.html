@@ -1,0 +1,23 @@
+<div class="container-fluid">
+    <div class = "card text-white bg-dark" id="post">
+        <div class="card-header">
+            <h2 id="bar" class="font-weight-bold">{{post.Bar | barName}}</h2>
+        </div>
+        <div class="card-body">
+            <h5 id="content" class="card-text">{{post.Content}}</h5>
+            <br/>
+        </div>
+    <div class="card-footer">
+        <div class="row">
+            <p class="card-text">{{post.Username}}</p>
+            <p class="card-text">User Rating: {{post.Rating}}/10</p>
+        </div>
+       
+        <div class="row">
+            <p class="card-text">{{timeStamp}}</p>
+            <p id="location" class="card-text">{{neighborhood | barName}}{{post.School}}</p>
+        </div>    
+    </div>
+    </div>
+</div>
+

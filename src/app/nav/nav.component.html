@@ -1,0 +1,46 @@
+
+<nav class="navbar navbar-expand-md navbar-dark bg-primary">
+
+
+    <a id="nav" class="navbar-brand" [routerLink]="['/home']">BARZ BRO</a>
+    
+    <div class="dropdown mr-1" dropdown>
+      <a class="dropdown-toggle text-light" data-toggle="dropdown" dropdownToggle>
+        City
+      </a>
+      <div class="dropdown-menu" *dropdownMenu>
+        <a class="dropdown-item" [routerLink]="['/location', 'Columbus']">Columbus</a>
+        <a class="dropdown-item" [routerLink]="['/location', 'Chicago']">Chicago</a>
+        <a class="dropdown-item" [routerLink]="['/location', 'New York']">New York</a>
+        <a class="dropdown-item" [routerLink]="['/location', 'Denver']">Denver</a>
+        <a class="dropdown-item" [routerLink]="['/location', 'DC']"> Washington DC</a>
+        <a class="dropdown-item" [routerLink]="['/location', 'Minneapolis']">Minneapolis</a>
+      </div>
+    </div>
+
+    <div class="dropdown mr-1" dropdown>
+      <a class="dropdown-toggle text-light" data-toggle="dropdown" dropdownToggle>
+        College
+      </a>
+      <div class="dropdown-menu" *dropdownMenu>
+        <a class="dropdown-item" [routerLink]="['/school', 'Ohio State']">The Ohio State</a>
+        <a class="dropdown-item" [routerLink]="['/school', 'Michigan']">Michigan</a>
+        <a class="dropdown-item" [routerLink]="['/school', 'Michigan State']">Michigan State</a>
+        <a class="dropdown-item" [routerLink]="['/school', 'Penn State']">Penn State</a>
+        <a class="dropdown-item" [routerLink]="['/school', 'Illinois']">Univerisity of Illinois</a>
+        <a class="dropdown-item" [routerLink]="['/school', 'Wisconsin']">Wisconsin</a>
+      </div>
+    </div>
+    
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" [routerLink]="['/post/user']">My Posts</a>
+      </li>
+    </ul>
+    <button class="ml-auto" (click)="logout()"><i class="fa fa-sign-out"></i>Logout</button>
+
+  
+
+ 
+
+</nav>

@@ -1,0 +1,42 @@
+<div class="container" *ngIf="!submitted">
+    <h1 id="title">Sign Up</h1>
+    <button (click)="signIn()" type="signin" class="btn btn-primary mt-3 mb-3">Back to Sign In Page</button>
+    <form id="signup">
+      <div class="form-group">
+        <label for="name">Username*</label>
+        <input type="text" class="form-control" [formControl]="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email*</label>
+        <input type="text" class="form-control" [formControl]="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password*</label>
+        <input type="password" class="form-control" [formControl]="password" required>
+      </div>
+
+      <div class="form-group">
+        <label for="confirm">Confirm Password*</label>
+        <input type="password" class="form-control" [formControl]="confirm" required>
+      </div>
+
+      <button (click)="signUp()" type="submit" class="btn btn-primary">Sign Up</button>
+      
+
+    </form>
+    <br />
+    <img class="img-fluid" src="../../assets/img/sign_up.jpg">
+</div>
+<div class="container" *ngIf="submitted">
+  <h1 id="title">Confirm your email with confirmation code</h1>
+  <form id="signup">
+    <div class="form-group">
+      <label for="code">Confirmation Code</label>
+      <input type="text" class="form-control" [formControl]="code" required>
+    </div>
+    <button (click)="resend()" type="resend" class="btn btn-primary">Resend code</button>
+    <button (click)="confirmCode()" type="submit" class="btn btn-primary ml-5">Submit</button>
+  </form>
+</div>

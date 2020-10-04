@@ -12,18 +12,18 @@
           <option>Wisconsin</option>
         </select>
       </div>
-  
+
       <div class="form-group">
         <label for="bar">Bar*</label>
         <input type="text" class="form-control" [formControl]="bar" required>
       </div>
-  
+
       <div class="form-group">
-        <label for="bar">Area (Ex: North Campus)</label>
+        <label for="bar">Area (Ex: North Campus)*</label>
         <input type="text" class="form-control" [formControl]="neighborhood" required>
       </div>
-  
-  
+
+
       <div class="form-group">
         <label for="rating">Rating*</label>
         <select class="form-control" id="rating" [formControl]="rating" required>
@@ -39,17 +39,17 @@
           <option>10</option>
         </select>
       </div>
-  
+
       <div class="form-group">
         <label for="content">What's Good?*</label>
         <textarea class="form-control" id="content" [formControl]="content" rows="3" required></textarea>
       </div>
-  
-      
+
+
       <button type="signup" class="btn btn-primary" (click)="cancel()">Cancel</button>
       <button type="submit" class="btn btn-primary ml-5">Submit</button>
-      
-  
+
+
     </form>
   </div>
-  
+
